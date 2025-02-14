@@ -101,7 +101,7 @@ def menu_desc():
             print("Harap masukkan angka yang valid.")
 
 # 2. tambah menu (admin resto)
-def tambah_menu():
+def add_menu():
     menu_resto()
     while True:
         try:
@@ -158,7 +158,7 @@ def tambah_menu():
                         while True:
                             lanjut = input("Apakah ingin menambah menu lain? (ya/tidak): ").strip().lower()
                             if lanjut == "ya":
-                                tambah_menu()  # Mengulang loop
+                                add_menu()  # Mengulang loop
                             elif lanjut == "tidak":
                                 main_menu()
                             # Keluar dari fungsi setelah menambahkan menu
@@ -271,7 +271,7 @@ def order_menu():
             if show_option == 1:
                 beli_menu()
             elif show_option == 2:
-                semua_pesanan()
+                payment()
             elif show_option == 0:
                 main_menu()
             else:
@@ -342,7 +342,7 @@ def beli_menu():  # Menyimpan semua pesanan
             continue
 
 # 5.2 menampilkan semua pesanan -> bayar -> rating makanan
-def semua_pesanan():
+def payment():
     """ Menampilkan semua pesanan yang telah dibuat """
     if not pesanan:
         print("\nBelum ada pesanan yang dibuat. Silakan tambahkan pesanan dulu dengan pilih menu 1")
@@ -393,13 +393,13 @@ def semua_pesanan():
                 main_menu()
             else:
                 print("Input yang dimasukkan salah. Silakan masukkan kembali.")
-                semua_pesanan()
+                payment()
         except ValueError:
             print("Harap masukkan angka yang valid.")
             
 
 #6. Saran dan Masukkan (customer only)
-def saran():
+def feedback():
     print('Halo Pelanggan Capstone Resto n Bar yang Terhormat, \nSaran dan masukan sangat berarti untuk Capstone Resto n Bar agar semakin lebih baik dalam melayani pelanggan.')
     
     kategori_dict = {
@@ -442,7 +442,7 @@ def saran():
                 if komen_lagi == "tidak":
                     main_menu()  # Keluar dari loop jika tidak ingin menambah lagi
                 elif komen_lagi == 'ya':
-                    saran()
+                    feedback()
                 else:
                     print('Silakan input jawaban yang sesuai')
                     continue  
@@ -462,7 +462,7 @@ def main_menu():
             if pilih_menu == 1:
                 show_menu()
             elif pilih_menu == 2:
-                tambah_menu()
+                add_menu()
             elif pilih_menu == 3:
                 delete_menu()
             elif pilih_menu == 4:
@@ -470,7 +470,7 @@ def main_menu():
             elif pilih_menu == 5:
                 order_menu()
             elif pilih_menu == 6:
-                saran()
+                feedback()
             elif pilih_menu == 7:
                 print('Terima kasih telah mengunjungi Capstone Resto n Bar 😁😁🙏🏻')
                 exit()

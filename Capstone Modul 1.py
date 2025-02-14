@@ -271,7 +271,7 @@ def order_menu():
             if show_option == 1:
                 beli_menu()
             elif show_option == 2:
-                payment()
+                payment_menu()
             elif show_option == 0:
                 main_menu()
             else:
@@ -342,7 +342,7 @@ def beli_menu():  # Menyimpan semua pesanan
             continue
 
 # 5.2 menampilkan semua pesanan -> bayar -> rating makanan
-def payment():
+def payment_menu():
     """ Menampilkan semua pesanan yang telah dibuat """
     if not pesanan:
         print("\nBelum ada pesanan yang dibuat. Silakan tambahkan pesanan dulu dengan pilih menu 1")
@@ -393,7 +393,7 @@ def payment():
                 main_menu()
             else:
                 print("Input yang dimasukkan salah. Silakan masukkan kembali.")
-                payment()
+                payment_menu()
         except ValueError:
             print("Harap masukkan angka yang valid.")
             

@@ -409,10 +409,10 @@ def saran():
         4: "Makanan",
         5: "Masukkan Lainnya"
     }
-    
+
     kotak_saran = []  # List untuk menyimpan saran
     indeks = 1  # Nomor urut saran
-
+    
     while True:
         # Menampilkan pilihan kategori
         print("\nSilakan pilih kategori yang ingin diberikan saran:")
@@ -449,18 +449,6 @@ def saran():
 
         except ValueError:
             print("Harap masukkan angka yang valid.")
-    
-    # Menampilkan semua saran dalam bentuk tabel
-    if kotak_saran:
-        print()
-        print('Terima kasih atas saran dan masukkan Anda. Kami akan terus memberikan yang terbaik untuk pelanggan Capstone Resto n Bar')
-        print()
-        print("\n=== Kotak Saran ===")
-        headers = ["Nomor", "Kategori", "Saran"]
-        print(tabulate(kotak_saran, headers=headers, tablefmt="grid"))
-        main_menu()
-    else:
-        print("\nBelum ada saran yang diberikan.")
 
 # Menu Utama
 def main_menu():

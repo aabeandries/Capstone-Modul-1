@@ -170,7 +170,7 @@ def tambah_menu():
             continue
 
 # 3. menghapus menu (admin resto)
-def hapus_menu():
+def delete_menu():
     menu_index = menu_resto()
     while True:
         try:
@@ -464,7 +464,7 @@ def main_menu():
             elif pilih_menu == 2:
                 tambah_menu()
             elif pilih_menu == 3:
-                hapus_menu()
+                delete_menu()
             elif pilih_menu == 4:
                 update_menu()
             elif pilih_menu == 5:

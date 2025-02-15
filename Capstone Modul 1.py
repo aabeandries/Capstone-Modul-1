@@ -4,47 +4,46 @@ from tabulate import tabulate
 
 # Menu Capstone Resto & Bar
 produk = {
-    'Nasi': {
-        'Nasi Goreng Kambing': [10, 10000, 200],
-        'Nasi Goreng Mawut' : [15, 25000, 300],
-        'Nasi Goreng Spesial Capstone': [10, 50000, 500]
+    "Nasi": {
+        "Nasi Goreng Kambing": [10, 10000, 200],
+        "Nasi Goreng Mawut": [15, 25000, 300],
+        "Nasi Goreng Spesial Capstone": [10, 50000, 500]
     },
-    'Mie': {
-        'Mie Goreng Kambing': [10, 20000, 200], 
-        'Mie Goreng Spesial Capstone': [10, 50000, 200]
+    "Mie": {
+        "Mie Goreng Kambing": [10, 20000, 200], 
+        "Mie Goreng Spesial Capstone": [10, 50000, 200]
     },
-    'Bihun': {
-        'Bihun Goreng Sapi': [10, 20000, 200], 
-        'Bihun Goreng Spesial Capstone': [10, 60000, 200]
+    "Bihun": {
+        "Bihun Goreng Sapi": [10, 20000, 200], 
+        "Bihun Goreng Spesial Capstone": [10, 60000, 200]
     }, 
-    'Minuman': {
-        'Es Teh': [20, 3000, 0], 
-        'Teh Hangat': [30, 2000, 0],
-        'Es Kelapa Muda':[20, 15000, 10]
+    "Minuman": {
+        "Es Teh": [20, 3000, 0], 
+        "Teh Hangat": [30, 2000, 0],
+        "Es Kelapa Muda": [20, 15000, 10]
     }
 }
 
 #Deskripsi menu
 deskripsi_menu = {
-
-    'Nasi Goreng Kambing': 'Nasi goreng dengan kecap dan bumbu spesial dilengkapi dengan paduan nikmatnya daging kambing muda yang lembut',
-    'Nasi Goreng Mawut': 'Nasi goreng dipadukan dengan nikmatnya mie goreng kenyal dan dilengkapi dengan topping daging ayam pilihan',
-    'Nasi Goreng Spesial Capstone': 'Nasi goreng spesial dengan tambahan topping premium seperti udang, ayam, dan telur',
-    'Mie Goreng Kambing': 'Mie goreng dengan bumbu khas dan daging kambing yang empuk',
-    'Mie Goreng Spesial Capstone': 'Mie goreng premium dengan tambahan seafood dan ayam panggang',
-    'Bihun Goreng Sapi': 'Bihun goreng dengan daging sapi pilihan dan sayuran segar',
-    'Bihun Goreng Spesial Capstone': 'Bihun goreng spesial dengan topping udang, sapi, dan ayam',
-    'Es Teh': 'Teh dingin yang menyegarkan dengan daun teh pilihan',
-    'Teh Hangat': 'Teh hangat dengan aroma khas yang menenangkan',
-    'Es Kelapa Muda': 'Segarnya air kelapa muda dengan es batu agar tetap menjaga kesegarannya'
+    "Nasi Goreng Kambing": "Nasi goreng dengan kecap dan bumbu spesial dilengkapi dengan paduan nikmatnya daging kambing muda yang lembut",
+    "Nasi Goreng Mawut": "Nasi goreng dipadukan dengan nikmatnya mie goreng kenyal dan dilengkapi dengan topping daging ayam pilihan",
+    "Nasi Goreng Spesial Capstone": "Nasi goreng spesial dengan tambahan topping premium seperti udang, ayam, dan telur",
+    "Mie Goreng Kambing": "Mie goreng dengan bumbu khas dan daging kambing yang empuk",
+    "Mie Goreng Spesial Capstone": "Mie goreng premium dengan tambahan seafood dan ayam panggang",
+    "Bihun Goreng Sapi": "Bihun goreng dengan daging sapi pilihan dan sayuran segar",
+    "Bihun Goreng Spesial Capstone": "Bihun goreng spesial dengan topping udang, sapi, dan ayam",
+    "Es Teh": "Teh dingin yang menyegarkan dengan daun teh pilihan",
+    "Teh Hangat": "Teh hangat dengan aroma khas yang menenangkan",
+    "Es Kelapa Muda": "Segarnya air kelapa muda dengan es batu agar tetap menjaga kesegarannya"
 }
 
 # 1. menampilkan menu (all access)
 def show_menu():
-    print('Silakan pilih tampilan menu yang diinginkan:\n1. Menampilkan semua menu\n2. Menampilkan deskripsi spesifik menu\n0. Kembali ke menu sebelumnya')
+    print("Silakan pilih tampilan menu yang diinginkan:\n1. Menampilkan semua menu\n2. Menampilkan deskripsi spesifik menu\n0. Kembali ke menu sebelumnya")
     while True:
         try:
-            show_option = int(input('Masukkan index menu yang diinginkan: '))
+            show_option = int(input("Masukkan index menu yang diinginkan: "))
             if show_option == 1:
                 menu_resto()
                 show_menu()
@@ -63,7 +62,7 @@ def show_menu():
 def menu_resto():
     index = 1  # Menambahkan index untuk tabel dimulai dari 1
     menu_index = {}  # Menyimpan mapping index ke nama menu
-    print('Berikut adalah menu makanan dan minuman di Capstone Resto')
+    print("Berikut adalah menu makanan dan minuman di Capstone Resto n Bar")
     for jenis_menu, nama_menu in produk.items():
         tabel_data = []
         for topping, detail in nama_menu.items():
@@ -110,11 +109,11 @@ def add_menu():
             
             # Cek apakah menu sudah ada
             if jenis_menu in produk and nama_menu in produk[jenis_menu]:
-                print(f'Nama Menu {nama_menu} sudah ada. Silakan pilih menu berikut:\n1. Menambah menu lain\n0. Kembali ke Menu Utama')
+                print(f"Nama Menu {nama_menu} sudah ada. Silakan pilih menu berikut:\n1. Menambah menu lain\n0. Kembali ke Menu Utama")
                 print()
                 while True:
                     try:
-                        option = int(input('Silakan masukkan menu yang diinginkan: '))
+                        option = int(input("Silakan masukkan menu yang diinginkan: "))
                         if option == 1:
                             add_menu()
                         else:
@@ -253,7 +252,7 @@ def update_menu():
 
                             menu_resto()
 
-                            print(f"\nMenu '{menu}' berhasil diperbarui!")
+                            print(f"\nMenu berhasil diperbarui!")
 
                             while True:
                                 lanjut = input("Apakah ingin memperbaharui menu lain? (ya/tidak): ").strip().lower()
@@ -269,10 +268,10 @@ def update_menu():
 
 # 5. Pembelian menu (customer only)
 def order_menu():
-    print('Silakan pilih tampilan menu yang diinginkan:\n1. Menambahkan Pesanan\n2. Menampilkan Semua Pesanan dan Bayar \n0. Kembali ke menu sebelumnya')
+    print("Silakan pilih tampilan menu yang diinginkan:\n1. Menambahkan Pesanan\n2. Menampilkan Semua Pesanan dan Bayar \n0. Kembali ke menu sebelumnya")
     while True:
         try:
-            show_option = int(input('Masukkan index menu yang diinginkan: '))
+            show_option = int(input("Masukkan index menu yang diinginkan: "))
             if show_option == 1:
                 buy_menu()
             elif show_option == 2:
@@ -332,12 +331,12 @@ def buy_menu():  # Menyimpan semua pesanan
                                     print("====Pesanan telah dikonfirmasi! Terima kasih telah membeli====")
                                     print()
                                     order_menu()
-                                elif tambah_lagi == 'ya':
+                                elif tambah_lagi == "ya":
                                     print("\nSilakan pilih menu berikutnya.")
                                     buy_menu() # Menampilkan stok kembali
                                       # Kembali ke pemilihan menu di loop utama
                                 else:
-                                    print('Jawaban yang diinput tidak valid. Harap input jawaban yang sesuai')
+                                    print("Jawaban yang diinput tidak valid. Harap input jawaban yang sesuai")
                                     continue
             else:
                 print("Indeks tidak ditemukan. Silakan pilih indeks yang sesuai.")
@@ -348,7 +347,7 @@ def buy_menu():  # Menyimpan semua pesanan
 
 # 5.2 menampilkan semua pesanan -> bayar -> rating makanan
 def payment_menu():
-    """ Menampilkan semua pesanan yang telah dibuat """
+    # Menampilkan semua pesanan yang telah dibuat
     if not pesanan:
         print("\nBelum ada pesanan yang dibuat. Silakan tambahkan pesanan dulu dengan pilih menu 1")
         print()
@@ -406,7 +405,7 @@ def payment_menu():
 
 #6. Saran dan Masukkan (customer only)
 def feedback():
-    print('Halo Pelanggan Capstone Resto n Bar yang Terhormat, \nSaran dan masukan sangat berarti untuk Capstone Resto n Bar agar semakin lebih baik dalam melayani pelanggan.')
+    print("Halo Pelanggan Capstone Resto n Bar yang Terhormat, \nSaran dan masukan sangat berarti untuk Capstone Resto n Bar agar semakin lebih baik dalam melayani pelanggan.")
     
     kategori_dict = {
         1: "Pelayanan",
@@ -447,10 +446,10 @@ def feedback():
                 komen_lagi = input("Apakah ingin menambahkan saran lain? (ya/tidak): ").strip().lower()
                 if komen_lagi == "tidak":
                     main_menu()  # Keluar dari loop jika tidak ingin menambah lagi
-                elif komen_lagi == 'ya':
+                elif komen_lagi == "ya":
                     feedback()
                 else:
-                    print('Silakan input jawaban yang sesuai')
+                    print("Silakan input jawaban yang sesuai")
                     continue  
 
         except ValueError:

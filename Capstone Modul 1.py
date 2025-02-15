@@ -61,16 +61,16 @@ def show_menu():
 
 # 1.1 menampilkan semua menu (all access)
 def menu_resto():
-    index = 1  # Menambahkan index untuk tabel
+    index = 1  # Menambahkan index untuk tabel dimulai dari 1
     menu_index = {}  # Menyimpan mapping index ke nama menu
     print('Berikut adalah menu makanan dan minuman di Capstone Resto')
     for jenis_menu, nama_menu in produk.items():
         tabel_data = []
         for topping, detail in nama_menu.items():
-            stok, harga, kalori = detail  # Unpack nilai dari list
+            stok, harga, kalori = detail  # Unpack nilai dari list detail
             tabel_data.append([index, topping, stok, harga, kalori])
             menu_index[index] = topping  # Simpan mapping index ke nama menu
-            index += 1  # Tambah index
+            index += 1  # Tambah index sesuai dengan urutan menu
 
         # Header tabel
         headers = ["Index", "Nama Menu", "Stok", "Harga", "Kalori"]
@@ -112,15 +112,16 @@ def add_menu():
             if jenis_menu in produk and nama_menu in produk[jenis_menu]:
                 print(f'Nama Menu {nama_menu} sudah ada. Silakan pilih menu berikut:\n1. Menambah menu lain\n0. Kembali ke Menu Utama')
                 print()
-                try:
-                    option = int(input('Silakan masukkan menu yang diinginkan: '))
-                    if option == 1:
+                while True:
+                    try:
+                        option = int(input('Silakan masukkan menu yang diinginkan: '))
+                        if option == 1:
+                            add_menu()
+                        else:
+                            main_menu()  # Keluar dari fungsi jika kembali ke menu utama
+                    except ValueError:
+                        print("Harap masukkan angka yang valid.")
                         continue
-                    else:
-                        main_menu()  # Keluar dari fungsi jika kembali ke menu utama
-                except ValueError:
-                    print("Harap masukkan angka yang valid.")
-                    continue
             
             # Input data menu baru
             while True:

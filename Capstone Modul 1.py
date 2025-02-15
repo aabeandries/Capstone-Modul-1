@@ -187,7 +187,7 @@ def delete_menu():
                         while True:
                             lanjut = input("Apakah ingin menghapus menu lain? (ya/tidak): ").strip().lower()
                             if lanjut == "ya":
-                                break  # Mengulang loop
+                                delete_menu()  # Mengulang loop
                             elif lanjut == "tidak":
                                 main_menu()
             else:

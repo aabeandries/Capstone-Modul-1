@@ -212,50 +212,54 @@ def update_menu():
                         print("3. Harga ")
                         print("4. Kalori Menu")
                         print("5. Deskripsi Menu")
+                        print("0. Kembali ke Menu Utama")
                         pilihan_ubah = int(input("Masukkan pilihan: "))
-                        
-                        if pilihan_ubah == 1:
-                            new_topping = input("Masukkan nama menu baru: ").title()
-                            if new_topping in produk[jenis_produk]:
-                                print("Nama menu sudah ada, silakan pilih nama lain.")
-                                continue
-                
-                            # Simpan urutan lama dalam list
-                            ordered_items = [(key, value) for key, value in produk[jenis_produk].items()]
-                
-                            # Ganti nama menu dalam list
-                            for i, (key, value) in enumerate(ordered_items):
-                                if key == menu:
-                                    ordered_items[i] = (new_topping, value)
-                
-                            # Konversi kembali ke dictionary
-                            produk[jenis_produk] = dict(ordered_items)
-                            
-                            # Perbarui deskripsi menu
-                            deskripsi_menu[new_topping] = deskripsi_menu.pop(menu, "Deskripsi tidak tersedia")
-                            menu_index[pilihan] = (jenis_produk, new_topping)
-                        elif pilihan_ubah == 2:
-                            produk[jenis_produk][menu][0] = int(input("Masukkan stok baru: "))
-                            
-                        elif pilihan_ubah == 3:
-                            produk[jenis_produk][menu][1] = int(input("Masukkan harga baru: "))
-                        elif pilihan_ubah == 4:
-                            produk[jenis_produk][menu][2] = int(input("Masukkan jumlah kalori baru: "))
-                        elif pilihan_ubah == 5:
-                            deskripsi_menu[menu] = input("Masukkan deskripsi baru: ").capitalize()
-                        else:
-                            print("Pilihan tidak valid.")
-                        
-                        menu_resto()
-
-                        print(f"\nMenu '{menu}' berhasil diperbarui!")
-
                         while True:
-                            lanjut = input("Apakah ingin memperbaharui menu lain? (ya/tidak): ").strip().lower()
-                            if lanjut == "ya":
-                                update_menu()  # Mengulang loop
-                            elif lanjut == "tidak":
+                            if pilihan_ubah == 1:
+                                new_topping = input("Masukkan nama menu baru: ").title()
+                                if new_topping in produk[jenis_produk]:
+                                    print("Nama menu sudah ada, silakan pilih nama lain.")
+                                    continue
+                    
+                                # Simpan urutan lama dalam list
+                                ordered_items = [(key, value) for key, value in produk[jenis_produk].items()]
+                    
+                                # Ganti nama menu dalam list
+                                for i, (key, value) in enumerate(ordered_items):
+                                    if key == menu:
+                                        ordered_items[i] = (new_topping, value)
+                    
+                                # Konversi kembali ke dictionary
+                                produk[jenis_produk] = dict(ordered_items)
+                                
+                                # Perbarui deskripsi menu
+                                deskripsi_menu[new_topping] = deskripsi_menu.pop(menu, "Deskripsi tidak tersedia")
+                                menu_index[pilihan] = (jenis_produk, new_topping)
+                            elif pilihan_ubah == 2:
+                                produk[jenis_produk][menu][0] = int(input("Masukkan stok baru: "))
+                                
+                            elif pilihan_ubah == 3:
+                                produk[jenis_produk][menu][1] = int(input("Masukkan harga baru: "))
+                            elif pilihan_ubah == 4:
+                                produk[jenis_produk][menu][2] = int(input("Masukkan jumlah kalori baru: "))
+                            elif pilihan_ubah == 5:
+                                deskripsi_menu[menu] = input("Masukkan deskripsi baru: ").capitalize()
+                            elif pilihan_ubah == 0:
                                 main_menu()
+                            else:
+                                print("Pilihan tidak valid.")
+                                
+
+                            menu_resto()
+
+                            print(f"\nMenu '{menu}' berhasil diperbarui!")
+
+                            while True:
+                                lanjut = input("Apakah ingin memperbaharui menu lain? (ya/tidak): ").strip().lower()
+                                if lanjut == "ya":
+                                    update_menu()  # Mengulang loop
+                                elif lanjut == "tidak":
+                                    main_menu()
             print("Indeks tidak ditemukan.")
             continue
         except ValueError:

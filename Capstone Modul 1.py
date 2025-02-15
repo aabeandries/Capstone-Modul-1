@@ -273,7 +273,7 @@ def order_menu():
         try:
             show_option = int(input('Masukkan index menu yang diinginkan: '))
             if show_option == 1:
-                beli_menu()
+                buy_menu()
             elif show_option == 2:
                 payment_menu()
             elif show_option == 0:
@@ -287,7 +287,7 @@ def order_menu():
 
 # 5.1 menambah pesanan
 pesanan = []
-def beli_menu():  # Menyimpan semua pesanan
+def buy_menu():  # Menyimpan semua pesanan
     menu_index = menu_resto()
     global pesanan
     while True:
@@ -333,7 +333,7 @@ def beli_menu():  # Menyimpan semua pesanan
                                     order_menu()
                                 elif tambah_lagi == 'ya':
                                     print("\nSilakan pilih menu berikutnya.")
-                                    beli_menu() # Menampilkan stok kembali
+                                    buy_menu() # Menampilkan stok kembali
                                       # Kembali ke pemilihan menu di loop utama
                                 else:
                                     print('Jawaban yang diinput tidak valid. Harap input jawaban yang sesuai')
@@ -364,7 +364,7 @@ def payment_menu():
     while True:
         try:
             if confirm == 'pesan lagi':
-                beli_menu()
+                buy_menu()
             elif confirm == 'bayar':
                 payment = int(input('Masukkan uang pembayaran: '))
                 if payment >= total_harga:
@@ -392,8 +392,9 @@ def payment_menu():
                         except ValueError:
                             print("Input harus berupa angka. Silakan coba lagi.")
                 headers.append("Rating")
-                print("\nHasil Rating:")
+                print("\n===Hasil Rating===")
                 print(tabulate(pesanan, headers=headers, tablefmt="grid"))
+                print('Terima kasih atas kunjungan Anda')
                 main_menu()
             else:
                 print("Input yang dimasukkan salah. Silakan masukkan kembali.")

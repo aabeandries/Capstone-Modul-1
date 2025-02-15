@@ -467,11 +467,26 @@ def main_menu():
             if pilih_menu == 1:
                 show_menu()
             elif pilih_menu == 2:
-                add_menu()
+                password = input('Masukkan password admin Capstone Resto n Bar: ')
+                if password == 'admin':
+                    add_menu()
+                else:
+                    print('=== Akses Ditolak! Anda bukan admin! === ')
+                    main_menu()
             elif pilih_menu == 3:
-                delete_menu()
+                password = input('Masukkan password admin Capstone Resto n Bar: ')
+                if password == 'admin':
+                    delete_menu()
+                else:
+                    print('=== Akses Ditolak! Anda bukan admin! === ')
+                    main_menu()    
             elif pilih_menu == 4:
-                update_menu()
+                password = input('Masukkan password admin Capstone Resto n Bar: ')
+                if password == 'admin':
+                    update_menu()
+                else:
+                    print('=== Akses Ditolak! Anda bukan admin! === ')
+                    main_menu()
             elif pilih_menu == 5:
                 order_menu()
             elif pilih_menu == 6:

@@ -459,7 +459,7 @@ def feedback():
 def main_menu():
     print()
     print('Selamat datang di Capstone Resto n Bar')
-    print('Berikut adalah menu yang bisa dipilih:\n1. Menampilkan menu\n2. Menambahkan menu baru\n3. Menghapus menu\n4. Mengubah menu yang ada\n5. Pembelian menu\n6. Saran dan Masukkan\n7. Keluar dari menu')
+    print('Berikut adalah menu yang bisa dipilih:\n1. Menampilkan menu\n2. Menambahkan menu baru (khusus admin resto)\n3. Menghapus menu (khusus admin resto)\n4. Mengubah menu yang ada (khusus admin resto)\n5. Pembelian menu\n6. Saran dan Masukkan\n7. Keluar dari menu')
    
     while True:
         try:

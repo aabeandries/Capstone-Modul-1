@@ -21,7 +21,7 @@ Sistem ini dirancang untuk membantu restoran dalam mengelola menu mereka secara 
         - kalori: jumlah kalori yang terkandung dalam 1 porsi nama menu
     - Menampilkan deskripsi menu untuk masing-masing nama menu dalam restoran berdasarkan indeks nama menu yang diinput user `menu_desc`
 2. Menambahkan menu baru: `add_menu`
-    - Menu khusus untuk admin restoran, sehingga membutuhkan password khusus admin
+    - Menu khusus untuk admin restoran, sehingga membutuhkan password khusus admin (password: admin)
     - User input data-data yang dibutuhkan untuk menambahkan menu baru: 
         - jenis menu (dapat input jenis menu yang sudah ada atau jenis menu baru)
         - nama menu
@@ -30,10 +30,10 @@ Sistem ini dirancang untuk membantu restoran dalam mengelola menu mereka secara 
         - kalori
         - deskripsi
 3. Menghapus data dalam menu: `delete_menu`
-    - Menu khusus untuk admin restoran, sehingga membutuhkan password khusus admin
+    - Menu khusus untuk admin restoran, sehingga membutuhkan password khusus admin (password: admin)
     - User input indeks nama menu yang ingin dihapus dari daftar `menu_resto`
 4. Mengubah data dalam menu yang sudah ada: `update_menu`
-    - Menu khusus untuk admin restoran, sehingga membutuhkan password khusus admin
+    - Menu khusus untuk admin restoran, sehingga membutuhkan password khusus admin (password: admin)
     - User input data-data menu yang sudah ada: 
         - nama menu
         - stok
